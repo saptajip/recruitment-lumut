@@ -1,5 +1,6 @@
 package com.example.saptajiprasetyo
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,7 @@ import com.example.saptajiprasetyo.data.model.Post
 
 class PostAdapter(
     private var items: List<Post>,
-    private val onClick: (String) -> Unit
+    private val onClick: (Int) -> Unit
 ) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -17,7 +18,9 @@ class PostAdapter(
 
         init {
             view.setOnClickListener {
-                onClick(items[adapterPosition].title)
+                val dataDikirim = items[adapterPosition].id // Masih kirim title (String)
+                Log.d("ClickLog", "Adapter Clicked: Title '$dataDikirim' di posisi ${adapterPosition}")
+                onClick(dataDikirim)
             }
         }
     }

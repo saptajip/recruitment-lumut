@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="16dp"
+    tools:context=".DetailFragment">
 
     <TextView
-
-        android:id="@+id/text_detail"
-        android:layout_width="wrap_content"
+        android:id="@+id/detailTitleTextView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Default detail" />
+        android:padding="12dp"
+        android:background="#E0F2F7" android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="16dp"
+        tools:text="Title"/>
+
+    <TextView
+        android:id="@+id/detailContentTextView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:background="#E0F2F7" android:textSize="16sp"
+        android:textColor="@android:color/black"
+        tools:text="Content"/>
 
 </LinearLayout>
