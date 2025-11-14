@@ -79,4 +79,6 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
     implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation ("androidx.recyclerview:recyclerview:1.3.1")
+    implementation ("androidx.fragment:fragment-ktx:1.6.1")
 }

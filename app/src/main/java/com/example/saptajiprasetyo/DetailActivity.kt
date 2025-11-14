@@ -6,16 +6,22 @@ import com.example.saptajiprasetyo.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityDetailBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityDetailBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_detail)
 
         val item = intent.getStringExtra("item") ?: "-"
 
-        binding.textDetail.text = "You selected: $item"
+        // Buat fragment dan kirim data lewat arguments
+        val fragment = DetailFragment().apply {
+            arguments = Bundle().apply {
+                putString("item", item)
+            }
+        }
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container_detail, fragment)
+            .commit()
     }
 }
+

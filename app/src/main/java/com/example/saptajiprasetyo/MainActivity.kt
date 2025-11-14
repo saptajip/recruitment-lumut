@@ -19,6 +19,13 @@ class MainActivity : AppCompatActivity() {
         // Gunakan layout tablet atau hp secara otomatis
         setContentView(R.layout.activity_main)
 
+        // Hanya tambahkan fragment pertama kali
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container_list, ListFragment())
+                .commit()
+        }
+
         // Deteksi tablet
         isTablet = isTabletDevice()
 
